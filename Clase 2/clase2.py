@@ -1,0 +1,1 @@
+# Condicionales: concatenación de operadores lógicos, incluídos "and" y "or"
