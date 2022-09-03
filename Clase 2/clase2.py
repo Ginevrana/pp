@@ -176,3 +176,114 @@
 # Resultado en consola:
 # Introduce tu email: juan.perez
 # Email ingresado es incorrecto
+
+#------------------------------------------------------
+
+# Bucle while: ciclo determinado
+
+# i=1
+
+# while i<=10:
+#     print("Ejecutando "+str(i))
+#     i=i+1
+
+# print("Terminó la ejecución.")
+
+# Resultado en consola:
+# Ejecutando 1
+# Ejecutando 2
+# Ejecutando 3
+# Ejecutando 4
+# Ejecutando 5
+# Ejecutando 6
+# Ejecutando 7
+# Ejecutando 8
+# Ejecutando 9
+# Ejecutando 10
+# Terminó la ejecución.
+
+
+# Ciclo while para no salir del programa hasta que se ingrese un dato válido
+
+# edad=int(input("Introduce tu edad por favor: "))
+
+# while edad<0 or edad>100:
+#     print("Has introducido una edad incorrecta. Vuelve a intentarlo")
+#     edad=int(input("Introduce tu edad por favor: "))
+
+# print("Gracias por colaborar. Puedes ingresar.")
+# print("Edad del aspirante "+ str(edad))
+
+# Resultado en consola:
+# Introduce tu edad por favor: -9
+# Has introducido una edad incorrecta. Vuelve a intentarlo
+# Introduce tu edad por favor: 120
+# Has introducido una edad incorrecta. Vuelve a intentarlo
+# Introduce tu edad por favor: 30
+# Gracias por colaborar. Puedes ingresar.
+# Edad del aspirante 30
+
+
+# While como limitador de intentos
+# print("Programa de cálculo de raíz cuadrada")
+# numero=int(input("Ingrese un número por favor: "))
+# intentos=0
+
+# while numero<0:
+#     print("No se puede hallar la raíz de un número negativo")
+#     if intentos==2:
+#         print("Has consumido demasiados intentos. El programa ha finalizado")
+        # La instrucción break corta el ciclo de while y ejecuta la primera linea de instrucción después del ciclo
+#         break
+#     numero=int(input("Ingrese un número por favor: "))
+#     if numero<0:
+#         intentos=intentos+1
+
+# Hay que importar el modulo math para requerirlo, sino tira error.
+# import math
+
+# if intentos<2:
+#     solucion=math.sqrt(numero)
+#     print("La raíz cuadrada de "+str(numero)+" es "+str(solucion))
+
+# Resultado en consola:
+# Programa de cálculo de raíz cuadrada
+# Ingrese un número por favor: 9
+# La raíz cuadrada de 9 es 3.0
+
+#------------------------------------------------------
+# continue: salta a la siguiente iteración de bucle:
+
+# for letra in "python":
+#     if letra=="y":
+#         continue
+#     print("Viendo la letra: "+ letra)
+
+# Resultado en consola:
+# Viendo la letra: p
+# Viendo la letra: t
+# Viendo la letra: h
+# Viendo la letra: o
+# Viendo la letra: n
+
+
+# nombre="La revelación informática"
+# contador=0
+
+# for i in nombre:
+#     if i==" ":
+#         continue
+#     contador+=1
+
+# print(contador)
+
+# Resultado en consola:
+# 23
+
+
+# pass: devuelve null en cuanto se lee en el interior de un bucle, utilizada en casos concretos en la definición de clases.
+
+while True:
+    pass
+
+# Significa que mientras sea verdadero quedará inmovilizado con un pass. Sólo se interrumpe ejecución con Ctrl+c
