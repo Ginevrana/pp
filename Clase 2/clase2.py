@@ -67,3 +67,112 @@
 #     print("La asignatura elegida no esta contemplada en las opciones")
 
 #------------------------------------------------------
+# Bucle FOR: Para repetir una o varias líneas de código. Pueden ser determinados o indeterminados.
+
+# Para que ejecute una acción basada en la cantidad de componentes del array
+# for i in [1,2,3]:
+#     print("Hola")
+
+# Resultado en consola:
+# Hola
+# Hola
+# Hola
+
+
+# Para que imprima cada uno de los componentes en consola
+# for i in ["Invierno", "Otoño", "Primavera","Verano"]:
+#     print(i)
+
+# Resultado en consola:
+# Invierno
+# Otoño
+# Primavera
+# Verano
+
+
+# Para que imprima todos los componentes en una sola línea con end=" "
+# for i in ["Invierno", "Otoño", "Primavera","Verano"]:
+#     print(i, end=" ")
+
+# Resultado en consola:
+# Invierno Otoño Primavera Verano
+
+
+# Podemos usarlo para validar un dato
+# email=False
+# miCorreo=input("Ingrese su dirección de correo: ")
+
+# for i in miCorreo:
+#     if(i=="@"):
+#         email=True
+# if email==True:
+#     print("El email es correcto")
+# else:
+#     print("El email no es correcto")
+
+
+# Blucle con range
+# for i in range(5):
+#     print(i)
+
+# Resultado en consola:
+# 0
+# 1
+# 2
+# 3
+# 4
+
+
+# Bucle concatenando textos con el valor tomado por i
+# for i in range(9):
+#     print(f"Valor de la variable {i}")
+
+# Resultado en consola:
+# Valor de la variable 0
+# Valor de la variable 1
+# Valor de la variable 2
+# Valor de la variable 3
+# Valor de la variable 4
+# Valor de la variable 5
+# Valor de la variable 6
+# Valor de la variable 7
+# Valor de la variable 8
+
+
+# Otra manera de usar el range es indicando el número desde el cual comenzar, el número hasta el cual llegar y los saltos de número.
+# for i in range(5,60,4):
+#     print(f"Valor de la variable {i}")
+
+# Resultado en consola:
+# Valor de la variable 5
+# Valor de la variable 9
+# Valor de la variable 13
+# Valor de la variable 17
+# Valor de la variable 21
+# Valor de la variable 25
+# Valor de la variable 29
+# Valor de la variable 33
+# Valor de la variable 37
+# Valor de la variable 41
+# Valor de la variable 45
+# Valor de la variable 49
+# Valor de la variable 53
+# Valor de la variable 57
+
+
+# Range como iterador de string: Va a pedir un mail que ingresaremos incorrectamente, con len(email) devuelve la longitud del string y con el condicional evaluaremos si alguna i equivale a "@".
+
+# valido=False
+# email=input("Introduce tu email: ")
+
+# for i in range(len(email)):
+#     if email[i]=="@":
+#         valido=True
+# if valido:
+#     print("Email ingresado es correcto")
+# else:
+#     print("Email ingresado es incorrecto")
+
+# Resultado en consola:
+# Introduce tu email: juan.perez
+# Email ingresado es incorrecto
