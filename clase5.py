@@ -302,7 +302,24 @@
 # - Si está al comienzo la dirección es errónea
 # - Si está al final la dirección es errónea
 
-# mail=input("Por favor ingrese su dirección de correo: ")
+correo=input("Ingrese su dirección de correo: ")
+valido=False
 
-# def verificacion(mail):
-#     while(mail)
+for i in range(len(correo)):
+    if correo[i]=="@":
+        valido=True
+    elif(int(i.count("@"))>1):
+        valido=False
+        break
+    elif(i.find("@")==0):
+        valido=False
+        break
+    elif(i.rfind("@")==int(len(correo))):
+        valido=False
+        break
+
+if valido:
+    print("Email ingresado es correcto")
+else:
+    print("Email ingresado es incorrecto")
+
