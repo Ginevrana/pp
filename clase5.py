@@ -27,23 +27,23 @@
 #         print("Marca: ", self.marca, "\nModelo: ", self.modelo, "\nEn Marcha: ", self.enmarcha, "\nAcelerando: ", self.acelera, "\nFrenado: ", self.frena)
 
 
-# # La clase vehículos la damos por terminada y ya estamos en condiciones de crear un objeto que herede la clase vehículos, todas sus propiedades y métodos.
+# La clase vehículos la damos por terminada y ya estamos en condiciones de crear un objeto que herede la clase vehículos, todas sus propiedades y métodos.
 
-# # class Moto(Vehiculos):
-# #     pass
+# class Moto(Vehiculos):
+#     pass
 
-# # miMoto=Moto("Honda","CBR")
-# # miMoto.estado()
+# miMoto=Moto("Honda","CBR")
+# miMoto.estado()
 
-# # Resultado por consola:
-# # Marca:  Honda 
-# # Modelo:  CBR       
-# # En Marcha:  False  
-# # Acelerando:  False 
-# # Frenado:  False    
+# Resultado por consola:
+# Marca:  Honda 
+# Modelo:  CBR       
+# En Marcha:  False  
+# Acelerando:  False 
+# Frenado:  False    
 
-# #---------------------------------
-# # Agregamos un comportamiento que no podemos hacer con otro vehículo
+#---------------------------------
+# Agregamos un comportamiento que no podemos hacer con otro vehículo
 # class Moto(Vehiculos):
 #     willy=""
 #     def willy(self):
@@ -58,17 +58,17 @@
 # miMoto.willy()
 # miMoto.estado()
 
-# # Resultado por consola:
-# # Marca:  Honda 
-# # Modelo:  CBR
-# # En Marcha:  False
-# # Acelerando:  False        
-# # Frenado:  False
-# # Willy:  Voy haciendo Willy
+# Resultado por consola:
+# Marca:  Honda 
+# Modelo:  CBR
+# En Marcha:  False
+# Acelerando:  False        
+# Frenado:  False
+# Willy:  Voy haciendo Willy
 
 
-# #-------------------------------------------------------------------
-# # Creamos otra clase con otro método interno
+#-------------------------------------------------------------------
+# Creamos otra clase con otro método interno
 # class Utilitario(Vehiculos):
 #     def carga(self,cargar):
 #         self.cargado=cargar
@@ -95,19 +95,6 @@
 # # Acelerando:  False
 # # Frenado:  False
 # # El utilitario está cargado
-
-# #--------------------------------------------
-# # Creamos otra clase de vehículos electricos
-# class vElectricos():
-#     def __init__(self):
-#         self.autonomia=100
-#     def cargandoEnergia(self):
-#         self.cargando=True
-
-# class BicicletaElectrica(vElectricos,Vehiculos):
-#     pass
-
-# miBici=BicicletaElectrica()
 
 #--------------------------------------------
 
@@ -178,3 +165,144 @@
 # True
 
 # Si a juan le cambiamos la clase a tipo Persona, en empleado nos daría False pero como persona seguiría dandonos True
+
+#--------------------------------------------
+# Volviendo al ejemplo del programa anterior de vehiculos
+# class vElectricos(Vehiculos):
+#     def __init__(self, marca, modelo):
+#         super(). __init__(marca,modelo)
+#         self.autonomia=100
+#     def cargandoEnergia(self):
+#         self.cargando=True
+
+# class BicicletaElectrica(vElectricos,Vehiculos):
+#     pass
+
+# miBici=BicicletaElectrica("Aurora","J0007")
+# miBici.estado()
+
+# Respuesta por consola:
+# Marca:  Aurora
+# Modelo:  J0007
+# En Marcha:  False
+# Acelerando:  False
+# Frenado:  False
+
+# -------------------------------------------------------
+# Polimorfismo: Puede cambiar de forma dependiendo del contexto que se utilice, así también el comportamiento
+
+# class Coche():
+#     def desplazamiento(self):
+#         print("Mi desplazamiento es en cuatro ruedas")
+
+
+# class Moto():
+#     def desplazamiento(self):
+#         print("Mi desplazamiento es en dos ruedas")
+
+
+# class Camion():
+#     def desplazamiento(self):
+#         print("Mi desplazamiento es en ocho ruedas")
+
+# # miVehiculo=Moto()
+# # miVehiculo.desplazamiento()
+
+# # miVehiculo2=Coche()
+# # miVehiculo2.desplazamiento()
+
+# # Supongamos que necesitamos programar el comportamiento para cientos de vehículos, tendremos que reproducir lo que hemos hecho hasta ahora por la cantidad de vehículos que necesitemos
+# # Para esto crearemos un método o función que va a recibir un objeto por parámetro
+
+# def desplazamientoVehiculo(vehiculo): # Polimorfismo
+#     vehiculo.desplazamiento()
+
+# miVehiculo=Camion()
+
+# desplazamientoVehiculo(miVehiculo)
+
+#------------------------------------------------------
+# MANIPULACIÓN DE CADENAS
+# Python es un lenguaje POO y trata a las cadenas de caracteres, palabras, frases, como objetos string y como tales tienen sus propiedades y métodos
+
+# cadena = " soy uNa cadEna de Caracteres"
+# print(cadena)
+
+# # Convierte en mayúsculas
+# print(cadena.upper())
+
+# # Convierte en minúsculas
+# print(cadena.lower())
+
+
+# # Convierte la primer letra en mayúscula
+# print(cadena.capitalize())
+
+# # Cuenta cuantas veces aparece una letra o cadena de caracteres
+# print("Cantidad de veces que aparece la letra a:", cadena.count("a"))
+
+# # Nos dice cual es la posición de una letra o un grupo de caracteres
+# print("Posición de la letra a", cadena.find("a"))
+
+# # Nos devuelve un booleano si el valor es numérico o no
+# print("¿Es un valor numérico?", cadena.isdigit())
+
+# # Comprueba si es alfanumérico
+# print("¿Es un valor alfanumérico?",cadena.isalpha())
+
+# # Nos devuelve la separación de las palabras usando espacios
+# print(cadena.split())
+
+# # Borra los espacios sobrantes al principio y al final de una frase
+# print(cadena.strip())
+
+# # Cambia una palabra o letra por otra
+# print(cadena.replace("a","e"))
+
+# # Lo mismo que find() pero contando desde atrás
+# print(cadena.rfind("e"))
+
+#----------------------------------------------------------------------
+# Ejemplo de uso de isdigit()
+
+# edad=input("Ingresa tu edad: ")
+
+# while(edad.isdigit()==False):
+#     print("Por favor, ingresa un valor numérico")
+#     edad=input("Ingresa tu edad: ")
+
+# if(int(edad)<18):
+#     print("No podes pasar")
+# else:
+#     print("Podes pasar")
+
+# edad=input("Ingresa tu edad: ")
+# if(int(edad)<18):
+#     print("No podes pasar")
+# else:
+#     print("Podes pasar")
+
+# Respuesta de consola:
+# Por favor, ingresa un valor numérico
+# Ingresa tu edad: sdf
+# Por favor, ingresa un valor numérico
+# Ingresa tu edad: asdf
+# Por favor, ingresa un valor numérico
+# Ingresa tu edad: 25
+# Podes pasar      
+# Ingresa tu edad: 23
+# Podes pasar
+
+
+#-------------------------------------------
+# Ejercitación: Crear un programa que pida una dirección de email por teclado. El programa debe imprimir en consola si la dirección es correcta o no en función de si tiene el símbolo "@"
+# - Si tiene una la dirección es correcta
+# - Si tiene más de una la dirección es errónea
+# - Si no tiene ninguna la dirección es errónea
+# - Si está al comienzo la dirección es errónea
+# - Si está al final la dirección es errónea
+
+# mail=input("Por favor ingrese su dirección de correo: ")
+
+# def verificacion(mail):
+#     while(mail)
