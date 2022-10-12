@@ -80,6 +80,7 @@ Pasos para importar método open:
     4- Vamos a elegir el modo escritura así:
         archivo_texto =open("archivo1.txt","w")
     5- Si lo guardamos y ejecutamos vemos que no nos dice nada pero si vamos a mirar la carpeta veremos que el archivo fue creado.
+    6- Generamos variable oracion y le asignamos una frase que vamos a guardar en el archivo
 '''
 
 
