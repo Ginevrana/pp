@@ -73,7 +73,7 @@ Herramientas principales para trabajar con streams:
 Pasos para importar método open:
     1- Creamos un nuevo programa manejos_archivo.py
     2- Importamos método open así:
-        from io import open
+        --- from io import open ----
     3- Ahora creamos el archivo externo con el método open() que nos va a pedir dos argumentos:
         -El nombre del archivo
         - El modo como lo vamos a abrir, modo lectura, escritura, append para agregar información a un archivo que ya existe
@@ -81,6 +81,42 @@ Pasos para importar método open:
         archivo_texto =open("archivo1.txt","w")
     5- Si lo guardamos y ejecutamos vemos que no nos dice nada pero si vamos a mirar la carpeta veremos que el archivo fue creado.
     6- Generamos variable oracion y le asignamos una frase que vamos a guardar en el archivo
+        oracion= "Hermoso día para aprender Python \n en el día de hoy"
+    7- Una vez creado vacío le cargamos información, e indicamos que incluya la frase con el método write. Finalmente cerramos:
+        archivo_texto.write(oracion)
+        archivo_texto.close()
+
+    Resumen: Creación y apertura de archivo - manipulación - cierre
+
+    8- Para verlo, abrimos el archivo en modo lectura y lo volvemos a cerrar, formato similar al de escritura:
+        archivo_texto=open("archivo1.txt","r")
+        texto=archivo_texto.read()
+        archivo_texto.close()
+        print(texto)
+
+También podemos encontrar otros métodos como:
+    • readlines(): lee linea a linea literal ignorando formatos agregados. Ejemplo:
+        from io import open
+        archivo_texto=poen("archivo1.txt","r")
+        lineas_texto=archivo_texto.readlines()
+        archivo_texto=close()
+        print(lineas_texto)
+
+        ** Respuesta en consola **
+        ['Hermoso día para aprender Python\n','en el día de hoy']
+
+    • append(): cambiando la r por una a para agregar contenido al final del archivo. Ejemplo:
+        from io import open
+        archivo_texto=open("archivo1.txt","a")
+        archivo_texto.write("\n evidentemente siempre es una buena ocasión para aprender")
+        archivo_texto.close()
+
+        -> Se corre el programa y cuando lo cambiemos a un formato de lectura (punto 8) y abrimos el archivo con el readlines() nos quedará el siguiente mensaje:
+            archivo_texto=open("archivo1.txt","r")
+            lineas_texto=archivo_texto.readlines()
+            lineas_texto.close()
+
+
 '''
 
 
