@@ -116,6 +116,41 @@ También podemos encontrar otros métodos como:
             lineas_texto=archivo_texto.readlines()
             lineas_texto.close()
 
+            print(lineas_texto[0]) // Hermoso día para aprender Python
+            print(lineas_texto[1]) // en el día de hoy
+            print(lineas_texto[2]) // evidentemente siempre es una buena ocasión para aprender
+    • seek(): para posicionar el puntero en algún lugar del archivo, nos pide un parámetro que va a ser el número de caracter donde queremos que se posicione el puntero. 
+    En la instrucción print() en combinación con el read() python lee el texto y se posiciona al final del archivo. Si volviera a repetir la misma instrucción, el resultado va a ser nulo porque no encuentra nada después del fin de archivo.
+    Usando el método seek(0) posicionamos el puntero de nuevo al principio y vuelve a mostrarnos el texto. Código:
+        from io import open
+        archivo_texto=open("archivo1.txt", "r")
+        archivo_texto.seek(18)
+    Ahora si ponemos el puntero en otra posición, elegimos la posición 18 nos mostrará hasta allí con el read(), de la siguiente manera:
+        from io import open
+        archivo_texto=open("archivo1.txt", "r")
+        print(archivo_texto.read(18))
+        archivo_texto.close()
+        // Respuesta por consola:
+            Hermoso día para a
+    Si queremos situarnos a la mitad del texto usamos la función len, la usaremos para saber la cantidad de caracteres que tiene el texto y dividirlo a la mitad, de la siguiente manera:
+        from io import open
+        archivo_texto=open("archivo1.txt", "r")
+        archivo_texto.seek(len(archivo_texto.read())/2)
+        print(archivo_texto.read())
+        archivo_texto.close()
+        // Respuesta por consola:
+            evidentemente siempre es una buena ocasión para aprender
+    • r+, con esta operación podremos abrir y escribir un archivo de la siguiente manera:
+        from io import open
+        archivo_texto=open("archivo1.txt","r+")
+        archivo_texto.write("Comienzo del texto")
+        // Respuesta por consola:
+            Comienzo del texto aprender Python 
+            en el día de hoy 
+            evidentemente siempre es una buena ocasión para aprender.
+        Como no indicamos nada al cursor cuando lo abrimos se posiciona al principio del archivo y reemplaza lo que había originalmente.
+
+
 
 '''
 
