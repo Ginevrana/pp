@@ -148,10 +148,63 @@ También podemos encontrar otros métodos como:
             Comienzo del texto aprender Python 
             en el día de hoy 
             evidentemente siempre es una buena ocasión para aprender.
-        Como no indicamos nada al cursor cuando lo abrimos se posiciona al principio del archivo y reemplaza lo que había originalmente.
+        Como no indicamos nada al cursor cuando lo abrimos se posiciona al principio del archivo y reemplaza lo que había originalmente. Podremos manipular los archivos de texto por líneas, agregando a mitad de este documento la variable de la siguiente manera:
+        from io import open
+        archivo_texto=open("archivo1.txt","r+")
+        lista_texto=archivo_texto.readlines();
+        lista_texto[1]="Esta línea la incluimos desde el exterior \n"
+        archivo_texto.seek(0)
+        archivo_texto.writelines(lista_texto)
+        archivo_texto.close()
+        // Respuesta por consola:
+            Comienzo del texto aprender Python
+            Esta linea la incluimos desde el exterior
+            evidentemente siempre es una buena ocasión para aprender
+        ----------------------------------------------------------------------------------------------------------
+        ** SERIALIZACIÓN **
+        ¿Qué es? Consiste en guardar un archivo externo (colección, diccionario, objeto) codificado en código binario.
+        ¿Para qué? El objetivo es facilitar la distribución si queremos guardarlo en un dispositivo de almacenamiento externo o una base de datos. 
+        ¿Cómo? Para esto usamos la biblioteca de Python Pickle, la cual tiene una serie de métodos: Dump(), para el volcado de datos al archivo binario externo y Load(), para la carga de dlos datos al archivo binario externo.
 
+        Ejemplo:
+        Crearemos una lista de nombres en un archivo binario y luegvo la rescataremos:
+        1- Importaremos la biblioteca pickle que tiene los métodos necesarios para poder serializar
+            import pickle
+        2- Creamos una lista con 4 nombres
+            lista_nombres=["juan","Pedro","Maria","Elena"]
+        3- Creamos un archivo externo al que llamaremos Lista_nombre y como segundo argumento debe tener acceso de esritura binaria "wb"
+            archivo_binario=open("lista_nombres","wb")
+        4- Ahora escribiremos la lista en el archivo externo que creamos en el punto anterior usando el método dump de la biblioteca pickle con dos argumentos: el nombre de la lista que tenemos en memoria y el nombre del archivo donde lo vamos a imprimir.
+            pickle.dump("lista_nombres", "wb")
+        5- Cerramos con el método close()
+            archivo_binario.close
+        6- Limpiamos la memoria con la función del()
+            del(archivo_binario)
+        7- Si corremos el programa veremos el archivo creado. 
+        8- Dejamos la importación de la biblioteca pickle para usar sus métodos y comentamos lo demas (el archivo ya fue creado, no necesitamos crearlo nuevamente.).
+        9- Creamos un archivo temporal en memoria con el método open, accedemos al archivo guardado en el disco, el primer parámetro que le doy al método es el nombre del archivo "lista_nombres" y como segundo el permiso con el que debe abrirlos es de lectura en formato binario:
+            archivo=open("lista_nombres", "rb")
+        10- Esa información que acabamos de abrir, la guardamos en una variable que la llamaremos lista, decimos que de la biblioteca utilice el método load() para leer la información que tenemos guardada en memoria en el archivo temporal.
+            lista=pickle.load(archivo)
+        11- Para ver lo que habíamos guardado usaremos un print() de la lista en memoria, guardamos las modificaciones y lo ejecutamos nuevamente y veremos el contenido de la lista de nombres guardada.
+            print(lista)
 
-
+        Para la serialización de objetos usaremos el código que teniamos de objetos tipo vehículos. De nuevo, se importa la biblioteca pickle, creamos tres objetos de vehículos dentro de la colección automóviles. 
+            automoviles=[auto1,auto2,auto3]
+        Creamos una variable que la llamamos archivo y crearemos un archivo llamado losautomoviles y el permiso con el que vamos a abrirlo que va a ser escritura de bytes "wb".
+            archivo=open("losautomoviles","wb")
+        Para escribir la información es el archivo, utilizamos el método dump de la librería con el nombre de la colección donde tenemos los objetos y por otro lado el nombre del archivo donde lo vamos a guardar.
+            pickle.dump(automoviles, archivo) 
+        Ahora estamos en condiciones de cerrar este archivo y limpiarlo de la memoria.
+            archivo.close()
+            del(archivo)
+        Lo abrimos en modo lectura binaria. Procedemos a leerlo y cargarlo en una variable:
+            archivoApertura=open("losautomoviles","rb")
+            misAutos=pickle.load(archivoApertura)
+        Lo cerramos nuevamente y corremos lo guardado en misAutos, recorriéndolo con un bucle for y el print muestra el estado:
+            archivoApertura.close()
+            for i in misAutos:
+                print(i.estado())
 '''
 
 
